@@ -26,11 +26,11 @@ cursor = conn.cursor()
 
 @bot.event
 async def on_ready():
-    print(f'          [Bloody X]')
-    await bot.change_presence(status = discord.Status.idle, activity = discord.Game('Bloody X'))
-    print(f"[Bloody X] Bot successfully launched!;")
-    print(f"[Bloody X] Name: [{bot.user}];")
-    print(f'[Bloody X] ID: [{bot.user.id}]')
+    print(f'          [MoonBot')
+    await bot.change_presence(status = discord.Status.idle, activity = discord.Game('.help'))
+    print(f"[MoonBot] Bot successfully launched!;")
+    print(f"[MoonBot] Name: [{bot.user}];")
+    print(f'[MoonBot] ID: [{bot.user.id}]')
     print('[------------------------------]')
     print(f'          [Other]')
 
@@ -102,16 +102,6 @@ async def meme(ctx):
     emb.set_image(url= random_meme())
     await ctx.send(embed=emb)
 
-@bot.command()
-@commands.has_permissions( administrator = True)
-async def clear(ctx, amount:int=None):
-    if amount == None:
-        return await ctx.send(embed = discord.Embed(description = f'**Укажите количество сообщений для удаления**', color=0x75218f))
-    embed = discord.Embed(description=f'**Было удалено {amount} сообщений**', color=0x75218f)
-    await ctx.message.delete()
-    await ctx.channel.purge(limit=amount)
-    await ctx.send(embed=embed, delete_after=6.0)
-
 @bot.event
 async def on_member_join( member ):
     emb = discord.Embed( description = f"**Приветствую тебя {member.mention}. Ты попал на сервер `{member.guild.name}`. Удачи тебе на сервере! 😜**", color = 0xda4a )
@@ -123,13 +113,12 @@ async def on_member_join( member ):
 
 @bot.command(aliases=['bot'])
 async def botinfo(ctx):
-    embed = discord.Embed(title=f"{ctx.guild.name}", description="Информация о боте **Bloody X#7002**.\n Бот был написан специально для проекта **`Bloody X`**,\n Подробнее о командах: **`.help`**", color = 0x00ffff)
+    embed = discord.Embed(title=f"{ctx.guild.name}", description="Информация о боте **MoonBot#7002**.\n Подробнее о командах: **`.help`**", color = 0x00ffff)
     embed.add_field(name=f'**Меня создал:**', value="๖̶̶̶ζ͜͡𝔻𝕣𝕒𝕘𝕠𝕟 𝔽𝕖𝕤𝕙#8992(<@668325441224048641>)", inline=False)  # Создает строку
-    embed.add_field(name=f'**Помощь в создании:**', value="Satana★#2362 (<@342317507991961602>)", inline=False)  # Создает строку
-    embed.add_field(name=f'**Лицензия:**', value="LD-v7", inline=False)  # Создает строку
+    embed.add_field(name=f'**Лицензия:**', value="VS-F5-GHQLT-HG", inline=False)  # Создает строку
     embed.add_field(name=f'**Я написан на:**', value="Discord.py", inline=False)  # Создает строку
-    embed.add_field(name=f'**Версия:**', value="V.3.0.1", inline=False)  # Создает строку
-    embed.add_field(name=f'**Патч:**', value="10", inline=False)  # Создает строку
+    embed.add_field(name=f'**Версия:**', value="V.1.0.0", inline=False)  # Создает строку
+    embed.add_field(name=f'**Патч:**', value="0", inline=False)  # Создает строку
     embed.set_thumbnail( url = bot.user.avatar_url)
     embed.set_footer(text=f"ζ͜͡𝔻𝕣𝕒𝕘𝕠𝕟 𝔽𝕖𝕤𝕙#8992 © | Все права защищены", icon_url='https://cdn.discordapp.com/avatars/668325441224048641/8c31407c2e8c98b98b112f315b4c82b6.webp?size=1024') # создаение футера
     await ctx.send(embed=embed)
