@@ -75,6 +75,10 @@ def random_meme():
     return picked_meme
 
 @bot.command()
+async def invite(ctx):
+    await ctx.send(embed = discord.Embed(description = f'**Не забудь бот может выйти с Вашего сервер!\nhttps://discord.com/api/oauth2/authorize?client_id=710896379635171340&permissions=8&scope=bot**', color=0x6fdb9e))
+
+@bot.command()
 async def cat(ctx):
     meow = random.randint(1, 100000)
     embed = discord.Embed(title='**Вот тебе кот:**' ,colour=0x00ffff)
@@ -86,15 +90,6 @@ async def meme(ctx):
     emb = discord.Embed(description = f"**Вот тебе мем:**", color = 0xda4a)
     emb.set_image(url= random_meme())
     await ctx.send(embed=emb)
-
-@bot.event
-async def on_member_join( member ):
-    emb = discord.Embed( description = f"**Приветствую тебя {member.mention}. Ты попал на сервер `{member.guild.name}`. Удачи тебе на сервере! 😜**", color = 0xda4a )
-    role = discord.utils.get( member.guild.roles, id = 696322642747064383 ) # Айди роли которая будет выдаватся когда человек зашёл на сервер
-
-    await member.add_roles( role )
-    channel = bot.get_channel( 696322644106281032 ) # Айди канала куда будет писатся сообщение
-    await channel.send( embed = emb )
 
 @bot.command(aliases=['bot'])
 async def botinfo(ctx):
@@ -196,7 +191,7 @@ async def password(ctx, lenght: int = None, number: int = None):
 @bot.command()
 async def help(ctx):
     embed1 = discord.Embed(title = '⚙ Навигация по командам:\n ❗ Обязательные параметры: `()`\n ❓ Необязательные параметры: `[]`', color=0x6fdb9e )
-    embed2 = discord.Embed(title ='💎 Базовые:', description='**``.user [@user]`` - Узнать информацию о пользователе 🎭\n ``.server`` - Узнать информацию о сервере 🧿\n `.bot` - Информация о боте 🤖\n`.avatar [@user]` - Аватар пользователя 🖼\n `.wiki (text)` - Википедия 📖**', color=0x6fdb9e )
+    embed2 = discord.Embed(title ='💎 Базовые:', description='**``.user [@user]`` - Узнать информацию о пользователе 🎭\n ``.server`` - Узнать информацию о сервере 🧿\n `.bot` - Информация о боте 🤖\n`.avatar [@user]` - Аватар пользователя 🖼\n `.wiki (text)` - Википедия 📖\n `.invite` - Пригласить бота 🎁**', color=0x6fdb9e )
     embed3 = discord.Embed(title ='✨ Роблокс:', description='**`.music` - Коды для музыки 💨\n `.scripts` - Скрипты для читерства 🧨\n `.script (number)` - Получить сам скрипт 💡**', color = 0x6fdb9e)
     embed4 = discord.Embed(title ='🎉 Весёлости:', description='**``.ran_color`` - Рандомный цвет в формате HEX 🩸\n ``.coin`` - Бросить монетку 🌈\n ``.math (2*2/2+2-2)`` - Решить пример :infinity:\n `.8ball (question)` - Волшебный шар 🔮\n `.password (10 10)` - Рандомный пароль 🎩\n `.meme` - Рандомный мем 🤣**', color=0x6fdb9e)
     embed5 = discord.Embed(title ='💋 Некос:', description='**`.hug (@user)` - Обнять 😜\n `.slap (@user)` - Ударить 😡\n `.ran_avatar` - Рандом. аватар 🤯\n `.kill [@user]` - Убить 🔪\n `.dog` - Собака :dog:\n `.goose` - Гусь :duck:\n `.cat` - Кот 🐱**', color=0x6fdb9e)
