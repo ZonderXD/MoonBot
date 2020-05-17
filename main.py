@@ -76,7 +76,7 @@ def random_meme():
 
 @bot.command()
 async def invite(ctx):
-    await ctx.send(embed = discord.Embed(description = f'**Не забудь бот может выйти с Вашего сервер!\nhttps://discord.com/api/oauth2/authorize?client_id=710896379635171340&permissions=8&scope=bot**', color=0x6fdb9e))
+    await ctx.send(embed = discord.Embed(description = f'**Не забудь бот может выйти с Вашего сервера!\nhttps://discord.com/api/oauth2/authorize?client_id=710896379635171340&permissions=8&scope=bot**', color=0x6fdb9e))
 
 @bot.command()
 async def cat(ctx):
