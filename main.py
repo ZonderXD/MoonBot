@@ -76,7 +76,11 @@ def random_meme():
 
 @bot.command()
 async def invite(ctx):
-    await ctx.send(embed = discord.Embed(description = f'**Не забудь бот может выйти с Вашего сервера!\nhttps://discord.com/api/oauth2/authorize?client_id=710896379635171340&permissions=8&scope=bot**', color=0x6fdb9e))
+    if ctx.author.id == 668325441224048641:
+	await ctx.send('**О ВЕЛИКИЙ, ВСЕМОГУЩИЙ СОЗДАТЕЛЬ. Я ОТПРАВЛЮ ТЕБЕ В ЛИЧНЫЕ СООБШЕНИЯ ССЫЛКА ЧТОБЫ ПРИГЛОСИТЬ МЕНЯ.')
+	await ctx.author.send('**https://discord.com/api/oauth2/authorize?client_id=710896379635171340&permissions=8&scope=bot **')
+    else:
+	await ctx.send(embed = discord.Embed(description = f'**Этот бот платный, чтобы его купить напиши <@668325441224048641> чтобы купить его.**', color=0x6fdb9e))
 
 @bot.command()
 async def cat(ctx):
