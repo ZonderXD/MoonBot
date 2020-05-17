@@ -449,13 +449,11 @@ async def leave(ctx, server_id: int):
 @bot.command()
 @commands.check(is_owner)
 async def servers(ctx):
-    channel = bot.get_channel
-    invitelink = await channel.create_invite(max_uses=1, max_age=21600, unique=True)
     description = ' '
     counter = 0
     for guild in bot.guilds:
         counter += 1
-        description += f'{counter}) **`{guild.name}`** - **`{len(guild.members)}`** участников. ID: **`{guild.id}`\n Пригл.:  {invitelink}** \n'
+        description += f'{counter}) **`{guild.name}`** - **`{len(guild.members)}`** участников. ID: **`{guild.id}`** \n'
         await ctx.send(embed = discord.Embed(title = 'Сервера, на которых я нахожусь', description = description, color = 0x00ffff))
 
 token = os.environ.get("Token")
