@@ -80,7 +80,7 @@ async def invite(ctx):
         await ctx.send('**О великий, всемогущий создатель. Я отправлю тебе в личные сообщения ссылку чтобы Вы смогли пригласить меня.**')
         await ctx.author.send('**https://discord.com/api/oauth2/authorize?client_id=710896379635171340&permissions=8&scope=bot **')
     else:
-        await ctx.send(embed = discord.Embed(description = f'**Этот бот платный, чтобы его купить напиши <@668325441224048641> чтобы купить его.**', color=0x6fdb9e))
+        await ctx.send(embed = discord.Embed(description = f'**Этот бот платный, чтобы его купить напишите моему создателю <@668325441224048641>.**', color=0x6fdb9e))
 
 @bot.command()
 async def cat(ctx):
