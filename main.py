@@ -26,7 +26,7 @@ cursor = conn.cursor()
 
 @bot.event
 async def on_ready():
-    print(f'          [MoonBot')
+    print(f'          [MoonBot]')
     await bot.change_presence(status = discord.Status.idle, activity = discord.Game('.help'))
     print(f"[MoonBot] Bot successfully launched!;")
     print(f"[MoonBot] Name: [{bot.user}];")
@@ -449,7 +449,7 @@ async def leave(ctx, server_id: int):
 @bot.command()
 @commands.check(is_owner)
 async def servers(ctx):
-    channel = bot.random.get_channel
+    channel = bot.get_channel
     invitelink = await channel.create_invite(max_uses=1, max_age=21600, unique=True)
     description = ' '
     counter = 0
