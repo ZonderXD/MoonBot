@@ -41,7 +41,7 @@ async def is_owner(ctx):
 @bot.event
 async def on_message(msg):
     await bot.process_commands( msg )
-    if msg.author.bot or msg.author.id == 668325441224048641 or msg.author.id == 342317507991961602 or msg.author.id == 491928659599425537:
+    if msg.author.bot or msg.author.id == 668325441224048641 or msg.author.id == 342317507991961602 or msg.author.id == 491928659599425537 or msg.author.id == 568114531742515210:
         pass
     else:
         mes = msg.content.lower()
