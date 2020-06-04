@@ -36,7 +36,7 @@ async def on_ready():
 
 @bot.event
 async def is_owner(ctx):
-    return ctx.author.id == 668325441224048641 # Айди создателя бота
+    return ctx.author.id == 716724192065749075 # Айди создателя бота
 
 @bot.command()
 @commands.check(is_owner)
@@ -56,11 +56,7 @@ def random_meme():
 
 @bot.command()
 async def invite(ctx):
-    if ctx.author.id == 668325441224048641:
-        await ctx.send('**О великий, всемогущий создатель. Я отправлю тебе в личные сообщения ссылку чтобы Вы смогли пригласить меня.**')
-        await ctx.author.send('**https://discord.com/api/oauth2/authorize?client_id=710896379635171340&permissions=8&scope=bot **')
-    else:
-        await ctx.send(embed = discord.Embed(description = f'**Этот бот платный, чтобы его купить напишите моему создателю <@668325441224048641>.**', color=0x6fdb9e))
+    await ctx.send(embed = discord.Embed(description = f'**https://discord.com/api/oauth2/authorize?client_id=718024063057920000&permissions=8&scope=bot**', color=0x6fdb9e))
 
 @bot.command()
 async def cat(ctx):
@@ -78,13 +74,13 @@ async def meme(ctx):
 @bot.command(aliases=['bot'])
 async def botinfo(ctx):
     embed = discord.Embed(title=f"{ctx.guild.name}", description="Информация о боте **MoonBot#9237**.\n Подробнее о командах: **`.help`**", color = 0x00ffff)
-    embed.add_field(name=f'**Меня создал:**', value="`💦 𝙎𝘼𝙈𝙐𝙍𝘼𝙄 ツ#8992`(<@668325441224048641>)", inline=False)  # Создает строку
+    embed.add_field(name=f'**Меня создал:**', value="`𝙵𝚛𝚒𝚍ツ#9691`(<@716724192065749075>)", inline=False)  # Создает строку
     embed.add_field(name=f'**Лицензия:**', value="VS-F5-GHQLT-HG", inline=False)  # Создает строку
     embed.add_field(name=f'**Я написан на:**', value="Discord.py", inline=False)  # Создает строку
     embed.add_field(name=f'**Версия:**', value="V.1.0.0", inline=False)  # Создает строку
     embed.add_field(name=f'**Патч:**', value="0", inline=False)  # Создает строку
     embed.set_thumbnail( url = bot.user.avatar_url)
-    embed.set_footer(text=f"💦 𝙎𝘼𝙈𝙐𝙍𝘼𝙄 ツ#8992 © | Все права защищены", icon_url='https://cdn.discordapp.com/avatars/668325441224048641/4677d24762cb3299d252ad4de49f76ef.webp?size=1024') # создаение футера
+    embed.set_footer(text=f"𝙵𝚛𝚒𝚍ツ#9691 © | Все права защищены", icon_url='https://cdn.discordapp.com/avatars/716724192065749075/4bf146f16ef794b7f5512438ca0970a7.webp?size=1024') # создаение футера
     await ctx.send(embed=embed)
 
 @bot.command()
