@@ -18,7 +18,7 @@ from discord.ext import commands
 from discord.utils import get
 from Cybernator import Paginator
 
-bot = commands.Bot(command_prefix='\')
+bot = commands.Bot(command_prefix='-')
 bot.remove_command('help')
 
 conn = sqlite3.connect("database.db") #например: C:/Users/z3r0x/Desktop/LionBot/database.db
@@ -27,7 +27,7 @@ cursor = conn.cursor()
 @bot.event
 async def on_ready():
     print(f'          [MoonBot]')
-    await bot.change_presence(status = discord.Status.idle, activity = discord.Game('I ClydeBot and i help you! Prefix: \'))
+    await bot.change_presence(status = discord.Status.idle, activity = discord.Game('I ClydeBot and i help you! Prefix: -'))
     print(f"[MoonBot] Bot successfully launched!;")
     print(f"[MoonBot] Name: [{bot.user}];")
     print(f'[MoonBot] ID: [{bot.user.id}]')
