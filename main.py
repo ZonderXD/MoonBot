@@ -73,7 +73,7 @@ async def meme(ctx):
 
 @bot.command(aliases=['bot'])
 async def botinfo(ctx):
-    embed = discord.Embed(title=f"{ctx.guild.name}", description="Информация о боте **MoonBot#9237**.\n Подробнее о командах: **`.help`**", color = 0x00ffff)
+    embed = discord.Embed(title=f"{ctx.guild.name}", description="Информация о боте **ClydeBot#3408**.\n Подробнее о командах: **`-help`**", color = 0x00ffff)
     embed.add_field(name=f'**Меня создал:**', value="`𝙵𝚛𝚒𝚍ツ#9691`(<@716724192065749075>)", inline=False)  # Создает строку
     embed.add_field(name=f'**Лицензия:**', value="VS-F5-GHQLT-HG", inline=False)  # Создает строку
     embed.add_field(name=f'**Я написан на:**', value="Discord.py", inline=False)  # Создает строку
@@ -171,10 +171,10 @@ async def password(ctx, lenght: int = None, number: int = None):
 @bot.command()
 async def help(ctx):
     embed1 = discord.Embed(title = '⚙ Навигация по командам:\n ❗ Обязательные параметры: `()`\n ❓ Необязательные параметры: `[]`', color=0x6fdb9e )
-    embed2 = discord.Embed(title ='💎 Базовые:', description='**``.user [@user]`` - Узнать информацию о пользователе 🎭\n ``.server`` - Узнать информацию о сервере 🧿\n `.bot` - Информация о боте 🤖\n`.avatar [@user]` - Аватар пользователя 🖼\n `.wiki (text)` - Википедия 📖\n `.invite` - Пригласить бота 🎁**', color=0x6fdb9e )
-    embed3 = discord.Embed(title ='✨ Роблокс:', description='**`.music` - Коды для музыки 💨**', color = 0x6fdb9e)
-    embed4 = discord.Embed(title ='🎉 Весёлости:', description='**``.ran_color`` - Рандомный цвет в формате HEX 🩸\n ``.coin`` - Бросить монетку 🌈\n ``.math (2*2/2+2-2)`` - Решить пример :infinity:\n `.8ball (question)` - Волшебный шар 🔮\n `.password (10 10)` - Рандомный пароль 🎩\n `.meme` - Рандомный мем 🤣**', color=0x6fdb9e)
-    embed5 = discord.Embed(title ='💋 Некос:', description='**`.hug (@user)` - Обнять 😜\n `.slap (@user)` - Ударить 😡\n `.ran_avatar` - Рандом. аватар 🤯\n `.kill [@user]` - Убить 🔪\n `.dog` - Собака :dog:\n `.goose` - Гусь :duck:\n `.cat` - Кот 🐱**', color=0x6fdb9e)
+    embed2 = discord.Embed(title ='💎 Базовые:', description='**``-user [@user]`` - Узнать информацию о пользователе 🎭\n ``-server`` - Узнать информацию о сервере 🧿\n `-bot` - Информация о боте 🤖\n`-avatar [@user]` - Аватар пользователя 🖼\n `-wiki (text)` - Википедия 📖\n `-invite` - Пригласить бота 🎁**', color=0x6fdb9e )
+    embed3 = discord.Embed(title ='✨ Роблокс:', description='**`-music` - Коды для музыки 💨**', color = 0x6fdb9e)
+    embed4 = discord.Embed(title ='🎉 Весёлости:', description='**``-ran_color`` - Рандомный цвет в формате HEX 🩸\n ``-coin`` - Бросить монетку 🌈\n ``-math (2*2/2+2-2)`` - Решить пример :infinity:\n `-8ball (question)` - Волшебный шар 🔮\n `-password (10 10)` - Рандомный пароль 🎩\n `-meme` - Рандомный мем 🤣**', color=0x6fdb9e)
+    embed5 = discord.Embed(title ='💋 Некос:', description='**`-hug (@user)` - Обнять 😜\n `-slap (@user)` - Ударить 😡\n `-ran_avatar` - Рандом. аватар 🤯\n `-kill [@user]` - Убить 🔪\n `-dog` - Собака :dog:\n `-goose` - Гусь :duck:\n `-cat` - Кот 🐱**', color=0x6fdb9e)
     embeds = [embed1, embed2, embed3, embed4, embed5]
     message = await ctx.send(embed=embed1)
     page = Paginator(bot, message, only=ctx.author, use_more=False, embeds=embeds)
